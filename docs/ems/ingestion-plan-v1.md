@@ -18,10 +18,11 @@
 
 ## 3. 采集与上送节拍
 
-- T1（前置机 -> Redis）默认 5s。
-- YC 上送策略（V1）：周期全量上送（每 5s）。
+- T1（前置机 -> Redis）默认 5s，可按设备类型、通道或站点配置。
+- YC 上送策略（V1）：前置机按越死区变化批量写入 Redis latest，不做周期全量上送。
 - YX 上送策略：变位上送 + 全量心跳。
 - YX 全量心跳周期：60s。
+- YX 变位需要保存历史；YC 单次越死区变化仅更新实时 latest，不直接作为历史入库事件。
 
 ## 4. 时间语义
 
@@ -41,6 +42,9 @@
 ## 6. SOE 与质量位
 
 - YX 需要 SOE。
+- SOE（Sequence of Events）定义：需要保留为事件流水的 YX 变位记录，用于按现场发生时间追溯事故顺序。
+- V1 不要求前置机判断测点是否为 SOE；前置机只负责写入 YX 变位流。
+- EMS 根据测点配置中的 `soeEnabled` 判断某条 YX 变位是否生成 SOE 事件。
 - SOE 按时序逐条记录，每条仅记录变位后状态（0/1），不在单条记录中同时存前/后状态。
 - quality 字段保留。
 - quality 编码：bitmask。
@@ -50,21 +54,124 @@
 
 - 消息体格式：JSON + Protobuf 均支持。
 - V1 先落地 JSON，后续可扩 Protobuf。
-- Redis 数据通道：Redis Stream。
+- Redis 数据通道：
+  - YC 实时 latest：Redis Hash。
+  - YX 变位：Redis Stream。
+  - SOE 不由前置机单独写 Stream，而是 EMS 消费 YX 变位流后根据 `soeEnabled` 派生生成。
+  - V1 不引入 YC Stream；如后续需要调试、审计或回放，再单独评估。
 
-## 8. 存储分工
+## 8. Redis 实时 YC 命名规范
+
+- Redis key：
+
+```text
+rt:yc:{psId}:{frontId}:{deviceType}:{bucket}
+```
+
+- Hash field：
+
+```text
+{deviceNo}_{pointCode}
+```
+
+- 默认 bucket：
+
+```text
+bucket = 0
+```
+
+- 示例：
+
+```text
+key   = rt:yc:PS001:FEP01:PCS:0
+field = PCS01_Ua
+value = {"v":10.23,"q":0,"ct":1716969600000,"wt":1716969600100}
+```
+
+- 字段语义：
+  - `psId`：电站 ID。
+  - `frontId`：逻辑前置机 ID。主备前置机仅 IP 不同，逻辑 `frontId` 保持一致，Redis key 不因主备切换变化。
+  - `deviceType`：设备类型，V1 预计约 5 ~ 8 类。
+  - `bucket`：应用层桶编号，V1 固定为 `0`，暂不定义 bucket 计算逻辑；后续如需扩展为 `0..N-1`，需另行定义前置机与 EMS 共同遵守的计算与迁移规则。
+  - `deviceNo`：设备编号。
+  - `pointCode`：EMS 与前置机共同使用的测点编码。
+  - `deviceNo` 与 `pointCode` 均不得包含 `_`，避免 Hash field 解析歧义。
+  - `v`：遥测值。
+  - `q`：质量位，`0 = Good`，非 `0 = 异常`。
+  - `ct`：前置机采集时间，毫秒时间戳。
+  - `wt`：前置机写入 Redis 时间，毫秒时间戳，仅作为诊断字段，不参与 V1 历史入库有效性判断。
+
+- 查询约定：
+  - 按设备类型查询时，EMS 先定位 `rt:yc:{psId}:{frontId}:{deviceType}:0`。
+  - 按设备编号查询时，EMS 根据设备配置拼接 `{deviceNo}_{pointCode}`，使用 `HMGET` 批量读取。
+  - 30s 历史入库任务按 `psId + frontId + deviceType + bucket` 遍历 Hash，使用 `HSCAN` 分批读取，避免大 Hash 阻塞 Redis。
+
+## 9. 前置机心跳（V1）
+
+- V1 仅定义最简单的前置机心跳，用于判断逻辑前置机是否在线。
+- 心跳周期：默认 5s。
+- 离线判定：超过 15s 未更新心跳，EMS 判定该前置机离线。
+- Redis key：
+
+```text
+hb:front:{psId}:{frontId}
+```
+
+- Value 示例：
+
+```json
+{"state":1,"ts":1716969600000,"ip":"10.0.0.11","ver":"1.0.0"}
+```
+
+- 字段语义：
+  - `state`：前置机状态，`1 = 在线`，`0 = 离线`。
+  - `ts`：前置机写入心跳时间，毫秒时间戳。
+  - `ip`：当前主用前置机 IP。
+  - `ver`：前置机程序版本。
+
+- V1 不单独定义通道心跳、设备心跳与 Redis 写入水位；如后续需要更精细的数据可信度判断，再在 V2 增加。
+
+## 10. Redis YX 变位流命名规范
+
+- Redis Stream key：
+
+```text
+stream:yx:{psId}:{frontId}:{deviceType}
+```
+
+- Message 字段：
+  - `deviceNo`：设备编号。
+  - `pointCode`：测点编码。
+  - `v`：遥信变位后的状态，`0/1`。
+  - `q`：质量位，`0 = Good`，非 `0 = 异常`。
+  - `ct`：前置机采集到变位的时间，毫秒时间戳。
+  - `seq`：前置机侧事件序号，用于辅助排序、排查与去重。
+
+- EMS 消费规则：
+  - 所有 YX 变位均更新 YX latest。
+  - `historyEnabled = true` 的 YX 变位写入 YX 变位历史。
+  - `soeEnabled = true` 的 YX 变位额外生成 SOE 事件流水。
+
+## 11. 存储分工
 
 - Redis：实时库（唯一实时值存储）。
 - TDengine：历史库，固定周期批量写入，周期可配置。
-  - 默认周期：5s。
-- PostgreSQL：业务关系库（指令、回执、审计、配置等），不存实时 latest。
+  - YC 默认周期：30s。
+  - YC 历史入库口径：每 30s 对全部遥测 latest 取当前窗口最后值，仅保存前置机心跳正常且 `quality = 0` 的数据。
+  - YC 历史主时间戳使用 EMS 30s 采样窗口时间，例如 `10:00:00`、`10:00:30`；同时保留 latest 中的 `ct` 作为前置机原始采集时间。
+  - YC `quality != 0` 的实时值可保留在 Redis latest，但 V1 暂不写入 TDengine 历史。
+  - YC 历史查询遇到 `quality != 0` 导致的缺点时，趋势展示与统计口径暂按前值延续处理。
+  - YX 历史入库口径：保存遥信变位记录。
+  - SOE 独立保存事件原始流水。
+- PostgreSQL：业务关系库（指令、回执、审计、测点配置等），不存实时 latest。
+  - 测点配置需包含 `historyEnabled` 与 `soeEnabled`，用于 EMS 判断 YX 变位是否入历史、是否生成 SOE。
 
-## 9. 保留周期
+## 12. 保留周期
 
 - SOE 保留时长：3 年。
 - TDengine 历史数据保留时长：3 年。
 
-## 10. SOE ACK 范围（V1）
+## 13. SOE ACK 范围（V1）
 
 - V1 暂不引入 SOE 的“事件确认/消警（ACK）”字段。
 - V1 的 SOE 仅保留事件原始流水（按时间顺序记录变位后状态）。
