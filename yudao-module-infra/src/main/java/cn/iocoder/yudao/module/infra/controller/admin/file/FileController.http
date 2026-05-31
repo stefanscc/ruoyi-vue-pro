@@ -1,0 +1,27 @@
+### 上传文件
+POST {{baseUrl}}/infra/file/upload?directory=test
+Authorization: Bearer {{token}}
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="sample.txt"
+Content-Type: text/plain
+
+hello file center
+--WebAppBoundary--
+
+### 文件分页
+GET {{baseUrl}}/infra/file/page?pageNo=1&pageSize=10
+Authorization: Bearer {{token}}
+
+### 文件详情
+GET {{baseUrl}}/infra/file/get?id=1
+Authorization: Bearer {{token}}
+
+### 文件下载
+GET {{baseUrl}}/infra/file/download/1
+Authorization: Bearer {{token}}
+
+### 删除文件
+DELETE {{baseUrl}}/infra/file/delete?id=1
+Authorization: Bearer {{token}}

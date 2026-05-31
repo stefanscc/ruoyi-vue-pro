@@ -12,9 +12,6 @@ public class FileRespVO {
     @Schema(description = "文件编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "1024")
     private Long id;
 
-    @Schema(description = "配置编号", requiredMode = Schema.RequiredMode.REQUIRED, example = "11")
-    private Long configId;
-
     @Schema(description = "文件路径", requiredMode = Schema.RequiredMode.REQUIRED, example = "yudao.jpg")
     private String path;
 

@@ -1,7 +1,7 @@
 package cn.iocoder.yudao.framework.encrypt.config;
 
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
+import cn.hutool.core.util.StrUtil;
+import jakarta.validation.constraints.AssertTrue;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.validation.annotation.Validated;
@@ -19,8 +19,7 @@ public class ApiEncryptProperties {
     /**
      * 是否开启
      */
-    @NotNull(message = "是否开启不能为空")
-    private Boolean enable;
+    private Boolean enable = false;
 
     /**
      * 请求头（响应头）名称
@@ -28,7 +27,6 @@ public class ApiEncryptProperties {
      * 1. 如果该请求头非空，则表示请求参数已被「前端」加密，「后端」需要解密
      * 2. 如果该响应头非空，则表示响应结果已被「后端」加密，「前端」需要解密
      */
-    @NotEmpty(message = "请求头（响应头）名称不能为空")
     private String header = "X-Api-Encrypt";
 
     /**
@@ -44,8 +42,7 @@ public class ApiEncryptProperties {
      *
      * @see <a href="https://help.aliyun.com/zh/ssl-certificate/what-are-a-public-key-and-a-private-key">什么是公钥和私钥？</a>
      */
-    @NotEmpty(message = "对称加密算法不能为空")
-    private String algorithm;
+    private String algorithm = "AES";
 
     /**
      * 请求的解密密钥
@@ -54,7 +51,6 @@ public class ApiEncryptProperties {
      * 1. 如果是【对称加密】时，它「后端」对应的是“密钥”。对应的，「前端」也对应的也是“密钥”。
      * 2. 如果是【非对称加密】时，它「后端」对应的是“私钥”。对应的，「前端」对应的是“公钥”。（重要！！！）
      */
-    @NotEmpty(message = "请求的解密密钥不能为空")
     private String requestKey;
 
     /**
@@ -64,7 +60,16 @@ public class ApiEncryptProperties {
      * 1. 如果是【对称加密】时，它「后端」对应的是“密钥”。对应的，「前端」也对应的也是“密钥”。
      * 2. 如果是【非对称加密】时，它「后端」对应的是“公钥”。对应的，「前端」对应的是“私钥”。（重要！！！）
      */
-    @NotEmpty(message = "响应的加密密钥不能为空")
     private String responseKey;
+
+    @AssertTrue(message = "开启 API 加解密时，algorithm、requestKey、responseKey 不能为空")
+    public boolean isEncryptionConfigValid() {
+        if (!Boolean.TRUE.equals(enable)) {
+            return true;
+        }
+        return StrUtil.isNotBlank(algorithm)
+                && StrUtil.isNotBlank(requestKey)
+                && StrUtil.isNotBlank(responseKey);
+    }
 
 }
