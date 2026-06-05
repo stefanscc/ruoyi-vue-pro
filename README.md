@@ -25,12 +25,11 @@ This repository is a trimmed EMS backend base derived from `ruoyi-vue-pro-jdk17`
 - file storage and file config
 - scheduled jobs and job logs
 - API access logs and API error logs
-- Redis monitor
 
 ## Removed from this base
 
 - WMS and other business modules
-- tenant, OAuth2, social login
+- OAuth2 and social login
 - sms, mail, notify
 - data source management
 - code generation and demo data

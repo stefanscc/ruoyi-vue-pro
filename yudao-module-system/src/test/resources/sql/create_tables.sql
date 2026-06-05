@@ -12,7 +12,6 @@ CREATE TABLE IF NOT EXISTS "system_dept" (
     "updater" varchar(64) DEFAULT '',
     "update_time" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "deleted" bit NOT NULL DEFAULT FALSE,
-    "tenant_id" bigint not null default  '0',
     PRIMARY KEY ("id")
 ) COMMENT '部门表';
 
@@ -49,7 +48,6 @@ CREATE TABLE IF NOT EXISTS "system_role" (
     "updater" varchar(64) DEFAULT '',
     "update_time" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "deleted" bit NOT NULL DEFAULT FALSE,
-    "tenant_id" bigint not null default  '0',
     PRIMARY KEY ("id")
 ) COMMENT '角色信息表';
 
@@ -62,7 +60,6 @@ CREATE TABLE IF NOT EXISTS "system_role_menu" (
     "updater" varchar(64) DEFAULT '',
     "update_time" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "deleted" bit NOT NULL DEFAULT FALSE,
-    "tenant_id" bigint not null default  '0',
     PRIMARY KEY ("id")
 ) COMMENT '角色和菜单关联表';
 
@@ -98,7 +95,6 @@ CREATE TABLE IF NOT EXISTS "system_user_role" (
      "updater" varchar(64) DEFAULT '',
      "update_time" timestamp DEFAULT NULL,
      "deleted" bit DEFAULT FALSE,
-    "tenant_id" bigint not null default  '0',
     PRIMARY KEY ("id")
 ) COMMENT '用户和角色关联表';
 
@@ -131,7 +127,6 @@ CREATE TABLE IF NOT EXISTS `system_user_session` (
     `updater` varchar(64) DEFAULT '' ,
     "update_time" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "deleted" bit NOT NULL DEFAULT FALSE,
-    "tenant_id" bigint not null default  '0',
     PRIMARY KEY (`id`)
 ) COMMENT '用户在线 Session';
 
@@ -147,7 +142,6 @@ CREATE TABLE IF NOT EXISTS "system_post" (
     "updater"     varchar(64)          DEFAULT '',
     "update_time" timestamp   NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "deleted"     bit         NOT NULL DEFAULT FALSE,
-    "tenant_id" bigint not null default  '0',
     PRIMARY KEY ("id")
 ) COMMENT '岗位信息表';
 
@@ -160,7 +154,6 @@ CREATE TABLE IF NOT EXISTS `system_user_post`(
     "updater"     varchar(64)        DEFAULT '',
     "update_time" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "deleted"     bit       NOT NULL DEFAULT FALSE,
-    "tenant_id"   bigint    not null default '0',
     PRIMARY KEY (`id`)
 ) COMMENT ='用户岗位表';
 
@@ -175,7 +168,6 @@ CREATE TABLE IF NOT EXISTS "system_notice" (
 	"updater" varchar(64) DEFAULT '' COMMENT '更新者',
 	"update_time" datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
 	"deleted" bit NOT NULL DEFAULT 0 COMMENT '是否删除',
-    "tenant_id" bigint not null default  '0',
     PRIMARY KEY("id")
 ) COMMENT '通知公告表';
 
@@ -216,7 +208,6 @@ CREATE TABLE IF NOT EXISTS `system_operate_log` (
     `updater`        varchar(64)            DEFAULT '',
     `update_time`      datetime      NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     `deleted`          bit(1)        NOT NULL DEFAULT '0',
-    "tenant_id"         bigint not null default  '0',
     PRIMARY KEY (`id`)
 ) COMMENT ='操作日志记录';
 
@@ -240,7 +231,6 @@ CREATE TABLE IF NOT EXISTS "system_users" (
     "updater" varchar(64) default '',
     "update_time" timestamp not null default current_timestamp,
     "deleted" bit not null default false,
-    "tenant_id" bigint not null default  '0',
     primary key ("id")
 ) comment '用户信息表';
 
@@ -310,7 +300,6 @@ CREATE TABLE IF NOT EXISTS "system_oauth2_access_token" (
    "updater" varchar DEFAULT '',
    "update_time" datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
    "deleted" bit NOT NULL DEFAULT FALSE,
-   "tenant_id" bigint not null,
    PRIMARY KEY ("id")
 ) COMMENT 'OAuth2 访问令牌';
 
@@ -328,7 +317,6 @@ CREATE TABLE IF NOT EXISTS "system_oauth2_refresh_token" (
     "updater" varchar DEFAULT '',
     "update_time" datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     "deleted" bit NOT NULL DEFAULT FALSE,
-    "tenant_id" bigint not null default  '0',
     PRIMARY KEY ("id")
 ) COMMENT 'OAuth2 刷新令牌';
 

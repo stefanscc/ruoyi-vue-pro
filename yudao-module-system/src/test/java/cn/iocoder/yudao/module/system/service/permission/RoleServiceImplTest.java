@@ -327,7 +327,7 @@ public class RoleServiceImplTest extends BaseDbUnitTest {
                     .thenReturn(roleService);
 
             // mock 数据
-            RoleDO dbRole = randomPojo(RoleDO.class).setCode("tenant_admin");
+            RoleDO dbRole = randomPojo(RoleDO.class).setCode("crm_admin");
             roleMapper.insert(dbRole);
             // 准备参数
             Long id = dbRole.getId();

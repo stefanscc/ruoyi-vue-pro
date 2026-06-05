@@ -57,12 +57,6 @@
             <artifactId>guava</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>cn.iocoder.boot</groupId>
-            <artifactId>yudao-spring-boot-starter-biz-ip</artifactId>
-            <optional>true</optional> <!-- 设置为 optional，只有在 AreaConvert 的时候使用 -->
-        </dependency>
-
         <!-- Test 测试相关 -->
         <dependency>
             <groupId>cn.iocoder.boot</groupId>

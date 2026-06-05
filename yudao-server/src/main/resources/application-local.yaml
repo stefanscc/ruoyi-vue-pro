@@ -63,13 +63,6 @@ spring:
             class: org.quartz.simpl.SimpleThreadPool
             threadCount: 10
             threadPriority: 5
-management:
-  endpoints:
-    web:
-      base-path: /actuator
-      exposure:
-        include: "*"
-
 logging:
   file:
     name: ${user.home}/logs/${spring.application.name}.log
@@ -86,7 +79,3 @@ yudao:
   security:
     mock-enable: true
     timeout: 24h
-
-lock4j:
-  acquire-timeout: 3000
-  expire: 30000

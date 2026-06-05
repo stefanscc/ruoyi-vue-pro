@@ -44,7 +44,6 @@ CREATE TABLE IF NOT EXISTS "infra_file" (
     "updater" varchar(64) DEFAULT '',
     "update_time" timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "deleted" bit NOT NULL DEFAULT FALSE,
-    "tenant_id" bigint not null default  '0',
     PRIMARY KEY ("id")
 ) COMMENT '文件表';
 
@@ -110,7 +109,6 @@ CREATE TABLE IF NOT EXISTS "infra_api_access_log" (
     "updater" varchar(64) default '',
     "update_time" timestamp not null default current_timestamp,
     "deleted" bit not null default false,
-    "tenant_id" bigint not null default  '0',
     primary key ("id")
 ) COMMENT 'API 访问日志表';
 
@@ -142,7 +140,6 @@ CREATE TABLE IF NOT EXISTS "infra_api_error_log" (
     "updater" varchar(64) default '',
     "update_time" timestamp not null default current_timestamp,
     "deleted" bit not null default false,
-    "tenant_id" bigint not null default  '0',
     primary key ("id")
 ) COMMENT '系统异常日志';
 

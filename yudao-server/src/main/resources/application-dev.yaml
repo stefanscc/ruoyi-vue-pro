@@ -81,20 +81,6 @@ spring:
     jdbc:
       initialize-schema: NEVER
 
---- #################### 服务保障相关配置 ####################
-
-# Lock4j 配置项
-lock4j:
-  acquire-timeout: 3000 # 获取分布式锁超时时间，默认为 3000 毫秒
-  expire: 30000 # 分布式锁的超时时间，默认为 30000 毫秒
-
-management:
-  endpoints:
-    web:
-      base-path: /actuator
-      exposure:
-        include: '*'
-
 logging:
   file:
     name: ${user.home}/logs/${spring.application.name}.log
