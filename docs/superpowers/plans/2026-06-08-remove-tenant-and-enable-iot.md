@@ -35,7 +35,7 @@
 
 ```xml
 <dependency>
-    <groupId>cn.iocoder.boot</groupId>
+    <groupId>com.ems.boot</groupId>
     <artifactId>east-module-iot-biz</artifactId>
     <version>${revision}</version>
 </dependency>
@@ -46,7 +46,7 @@
 ```xml
 <!-- delete this block -->
 <dependency>
-    <groupId>cn.iocoder.boot</groupId>
+    <groupId>com.ems.boot</groupId>
     <artifactId>east-spring-boot-starter-biz-tenant</artifactId>
 </dependency>
 ```

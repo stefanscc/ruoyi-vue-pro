@@ -111,7 +111,7 @@ aj:
 east:
   info:
     version: 1.0.0
-    base-package: cn.iocoder.east
+    base-package: com.ems.east
   file:
     base-path: ${user.home}/.east/files
   web:

@@ -1,9 +1,9 @@
-package cn.iocoder.east.module.infra.dal.dataobject.demo;
+package com.ems.east.module.infra.dal.dataobject.demo;
 
 import lombok.*;
 import java.util.*;
 import com.baomidou.mybatisplus.annotation.*;
-import cn.iocoder.east.framework.mybatis.core.dataobject.BaseDO;
+import com.ems.east.framework.mybatis.core.dataobject.BaseDO;
 
 /**
  * 分类 DO

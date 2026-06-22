@@ -1,12 +1,12 @@
-package cn.iocoder.east.module.infra.controller.admin.demo.vo;
+package com.ems.east.module.infra.controller.admin.demo.vo;
 
 import cn.idev.excel.annotation.ExcelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import cn.iocoder.east.framework.excel.core.annotations.DictFormat;
-import cn.iocoder.east.framework.excel.core.convert.DictConvert;
+import com.ems.east.framework.excel.core.annotations.DictFormat;
+import com.ems.east.framework.excel.core.convert.DictConvert;
 
 /**
  * 学生 Excel 导入 VO

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>east-module-iot</artifactId>
-        <groupId>cn.iocoder.boot</groupId>
+        <groupId>com.ems.boot</groupId>
         <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -21,7 +21,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>cn.iocoder.boot</groupId>
+            <groupId>com.ems.boot</groupId>
             <artifactId>east-common</artifactId>
         </dependency>
 

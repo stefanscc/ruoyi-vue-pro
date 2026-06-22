@@ -53,13 +53,13 @@ No production gateway protocol handler changes are planned because HTTP ingress 
 - [ ] **Step 1: Write the failing core test**
 
 ```java
-package cn.iocoder.east.module.iot.core.mq.message;
+package com.ems.east.module.iot.core.mq.message;
 
-import cn.iocoder.east.framework.common.util.json.JsonUtils;
-import cn.iocoder.east.module.iot.core.enums.IotDeviceMessageMethodEnum;
-import cn.iocoder.east.module.iot.core.topic.IotDeviceIdentity;
-import cn.iocoder.east.module.iot.core.topic.state.IotDeviceStateUpdateReqDTO;
-import cn.iocoder.east.module.iot.core.topic.state.IotSubDeviceStatePackPostReqDTO;
+import com.ems.east.framework.common.util.json.JsonUtils;
+import com.ems.east.module.iot.core.enums.IotDeviceMessageMethodEnum;
+import com.ems.east.module.iot.core.topic.IotDeviceIdentity;
+import com.ems.east.module.iot.core.topic.state.IotDeviceStateUpdateReqDTO;
+import com.ems.east.module.iot.core.topic.state.IotSubDeviceStatePackPostReqDTO;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;

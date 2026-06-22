@@ -23,10 +23,10 @@ mybatis-plus:
 # 日志配置
 logging:
   level:
-    cn.iocoder.east.module.iot.service.rule.scene.matcher: DEBUG
-    cn.iocoder.east.module.iot.service.rule.scene.matcher.IotSceneRuleMatcherManager: INFO
-    cn.iocoder.east.module.iot.service.rule.scene.matcher.condition: DEBUG
-    cn.iocoder.east.module.iot.service.rule.scene.matcher.trigger: DEBUG
+    com.ems.east.module.iot.service.rule.scene.matcher: DEBUG
+    com.ems.east.module.iot.service.rule.scene.matcher.IotSceneRuleMatcherManager: INFO
+    com.ems.east.module.iot.service.rule.scene.matcher.condition: DEBUG
+    com.ems.east.module.iot.service.rule.scene.matcher.trigger: DEBUG
     root: WARN
 
 --- #################### 定时任务相关配置 ####################
@@ -44,7 +44,7 @@ logging:
 # 芋道配置项，设置当前项目所有自定义的配置
 east:
   info:
-    base-package: cn.iocoder.east
+    base-package: com.ems.east
   xss:
     enable: false
   demo: false # 关闭演示模式

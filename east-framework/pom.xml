@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>east</artifactId>
-        <groupId>cn.iocoder.boot</groupId>
+        <groupId>com.ems.boot</groupId>
         <version>${revision}</version>
     </parent>
     <packaging>pom</packaging>

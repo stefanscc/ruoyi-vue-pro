@@ -1,11 +1,11 @@
-package cn.iocoder.east.module.infra.service.demo;
+package com.ems.east.module.infra.service.demo;
 
 import java.util.*;
 import jakarta.validation.*;
-import cn.iocoder.east.module.infra.controller.admin.demo.vo.*;
-import cn.iocoder.east.module.infra.dal.dataobject.demo.InfraStudentDO;
-import cn.iocoder.east.framework.common.pojo.PageResult;
-import cn.iocoder.east.framework.common.pojo.PageParam;
+import com.ems.east.module.infra.controller.admin.demo.vo.*;
+import com.ems.east.module.infra.dal.dataobject.demo.InfraStudentDO;
+import com.ems.east.framework.common.pojo.PageResult;
+import com.ems.east.framework.common.pojo.PageParam;
 
 /**
  * 学生 Service 接口

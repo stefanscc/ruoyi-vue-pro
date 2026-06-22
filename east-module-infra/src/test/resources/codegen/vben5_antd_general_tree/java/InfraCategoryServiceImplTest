@@ -1,16 +1,16 @@
-package cn.iocoder.east.module.infra.service.demo;
+package com.ems.east.module.infra.service.demo;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import jakarta.annotation.Resource;
 
-import cn.iocoder.east.framework.test.core.ut.BaseDbUnitTest;
+import com.ems.east.framework.test.core.ut.BaseDbUnitTest;
 
-import cn.iocoder.east.module.infra.controller.admin.demo.vo.*;
-import cn.iocoder.east.module.infra.dal.dataobject.demo.InfraCategoryDO;
-import cn.iocoder.east.module.infra.dal.mysql.demo.InfraCategoryMapper;
-import cn.iocoder.east.framework.common.pojo.PageResult;
+import com.ems.east.module.infra.controller.admin.demo.vo.*;
+import com.ems.east.module.infra.dal.dataobject.demo.InfraCategoryDO;
+import com.ems.east.module.infra.dal.mysql.demo.InfraCategoryMapper;
+import com.ems.east.framework.common.pojo.PageResult;
 
 import jakarta.annotation.Resource;
 import org.springframework.context.annotation.Import;
@@ -18,12 +18,12 @@ import java.util.*;
 import java.time.LocalDateTime;
 
 import static cn.hutool.core.util.RandomUtil.*;
-import static cn.iocoder.east.module.infra.enums.ErrorCodeConstants.*;
-import static cn.iocoder.east.framework.test.core.util.AssertUtils.*;
-import static cn.iocoder.east.framework.test.core.util.RandomUtils.*;
-import static cn.iocoder.east.framework.common.util.date.LocalDateTimeUtils.*;
-import static cn.iocoder.east.framework.common.util.object.ObjectUtils.*;
-import static cn.iocoder.east.framework.common.util.date.DateUtils.*;
+import static com.ems.east.module.infra.enums.ErrorCodeConstants.*;
+import static com.ems.east.framework.test.core.util.AssertUtils.*;
+import static com.ems.east.framework.test.core.util.RandomUtils.*;
+import static com.ems.east.framework.common.util.date.LocalDateTimeUtils.*;
+import static com.ems.east.framework.common.util.object.ObjectUtils.*;
+import static com.ems.east.framework.common.util.date.DateUtils.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 

@@ -45,4 +45,4 @@ mybatis:
 # 芋道配置项，设置当前项目所有自定义的配置
 east:
   info:
-    base-package: cn.iocoder.east.module
+    base-package: com.ems.east.module

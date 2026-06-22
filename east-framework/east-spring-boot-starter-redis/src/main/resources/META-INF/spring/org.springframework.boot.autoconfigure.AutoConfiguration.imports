@@ -1,2 +1,2 @@
-cn.iocoder.east.framework.redis.config.EastRedisAutoConfiguration
-cn.iocoder.east.framework.redis.config.EastCacheAutoConfiguration
+com.ems.east.framework.redis.config.EastRedisAutoConfiguration
+com.ems.east.framework.redis.config.EastCacheAutoConfiguration

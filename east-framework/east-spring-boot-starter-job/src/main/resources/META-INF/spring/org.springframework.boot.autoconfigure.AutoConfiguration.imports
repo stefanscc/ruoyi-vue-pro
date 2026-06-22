@@ -1,2 +1,2 @@
-cn.iocoder.east.framework.quartz.config.EastQuartzAutoConfiguration
-cn.iocoder.east.framework.quartz.config.EastAsyncAutoConfiguration
+com.ems.east.framework.quartz.config.EastQuartzAutoConfiguration
+com.ems.east.framework.quartz.config.EastAsyncAutoConfiguration

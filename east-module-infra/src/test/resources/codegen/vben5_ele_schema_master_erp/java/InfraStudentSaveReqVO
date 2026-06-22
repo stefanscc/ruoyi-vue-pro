@@ -1,4 +1,4 @@
-package cn.iocoder.east.module.infra.controller.admin.demo.vo;
+package com.ems.east.module.infra.controller.admin.demo.vo;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
@@ -6,8 +6,8 @@ import java.util.*;
 import jakarta.validation.constraints.*;
 import org.springframework.format.annotation.DateTimeFormat;
 import java.time.LocalDateTime;
-import cn.iocoder.east.module.infra.dal.dataobject.demo.InfraStudentContactDO;
-import cn.iocoder.east.module.infra.dal.dataobject.demo.InfraStudentTeacherDO;
+import com.ems.east.module.infra.dal.dataobject.demo.InfraStudentContactDO;
+import com.ems.east.module.infra.dal.dataobject.demo.InfraStudentTeacherDO;
 
 @Schema(description = "管理后台 - 学生新增/修改 Request VO")
 @Data

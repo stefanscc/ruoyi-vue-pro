@@ -1,1 +1,1 @@
-cn.iocoder.east.module.iot.core.messagebus.config.IotMessageBusAutoConfiguration
+com.ems.east.module.iot.core.messagebus.config.IotMessageBusAutoConfiguration

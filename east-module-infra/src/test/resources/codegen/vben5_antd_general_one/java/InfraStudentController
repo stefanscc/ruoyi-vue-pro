@@ -1,4 +1,4 @@
-package cn.iocoder.east.module.infra.controller.admin.demo;
+package com.ems.east.module.infra.controller.admin.demo;
 
 import org.springframework.web.bind.annotation.*;
 import jakarta.annotation.Resource;
@@ -14,20 +14,20 @@ import jakarta.servlet.http.*;
 import java.util.*;
 import java.io.IOException;
 
-import cn.iocoder.east.framework.common.pojo.PageParam;
-import cn.iocoder.east.framework.common.pojo.PageResult;
-import cn.iocoder.east.framework.common.pojo.CommonResult;
-import cn.iocoder.east.framework.common.util.object.BeanUtils;
-import static cn.iocoder.east.framework.common.pojo.CommonResult.success;
+import com.ems.east.framework.common.pojo.PageParam;
+import com.ems.east.framework.common.pojo.PageResult;
+import com.ems.east.framework.common.pojo.CommonResult;
+import com.ems.east.framework.common.util.object.BeanUtils;
+import static com.ems.east.framework.common.pojo.CommonResult.success;
 
-import cn.iocoder.east.framework.excel.core.util.ExcelUtils;
+import com.ems.east.framework.excel.core.util.ExcelUtils;
 
-import cn.iocoder.east.framework.apilog.core.annotation.ApiAccessLog;
-import static cn.iocoder.east.framework.apilog.core.enums.OperateTypeEnum.*;
+import com.ems.east.framework.apilog.core.annotation.ApiAccessLog;
+import static com.ems.east.framework.apilog.core.enums.OperateTypeEnum.*;
 
-import cn.iocoder.east.module.infra.controller.admin.demo.vo.*;
-import cn.iocoder.east.module.infra.dal.dataobject.demo.InfraStudentDO;
-import cn.iocoder.east.module.infra.service.demo.InfraStudentService;
+import com.ems.east.module.infra.controller.admin.demo.vo.*;
+import com.ems.east.module.infra.dal.dataobject.demo.InfraStudentDO;
+import com.ems.east.module.infra.service.demo.InfraStudentService;
 
 @Tag(name = "管理后台 - 学生")
 @RestController

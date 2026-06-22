@@ -193,19 +193,19 @@ logging:
     name: ${user.home}/logs/${spring.application.name}.log # 日志文件名，全路径
   level:
     # 应用基础日志级别
-    cn.iocoder.east.module.iot.gateway: INFO
+    com.ems.east.module.iot.gateway: INFO
     org.springframework.boot: INFO
     # RocketMQ 日志
     org.apache.rocketmq: WARN
     # MQTT 客户端日志
     # io.vertx.mqtt: DEBUG
     # 开发环境详细日志
-    cn.iocoder.east.module.iot.gateway.protocol.emqx: DEBUG
-    cn.iocoder.east.module.iot.gateway.protocol.http: DEBUG
-    cn.iocoder.east.module.iot.gateway.protocol.mqtt: DEBUG
-    cn.iocoder.east.module.iot.gateway.protocol.coap: DEBUG
-    cn.iocoder.east.module.iot.gateway.protocol.websocket: DEBUG
-    cn.iocoder.east.module.iot.gateway.protocol.modbus: DEBUG
+    com.ems.east.module.iot.gateway.protocol.emqx: DEBUG
+    com.ems.east.module.iot.gateway.protocol.http: DEBUG
+    com.ems.east.module.iot.gateway.protocol.mqtt: DEBUG
+    com.ems.east.module.iot.gateway.protocol.coap: DEBUG
+    com.ems.east.module.iot.gateway.protocol.websocket: DEBUG
+    com.ems.east.module.iot.gateway.protocol.modbus: DEBUG
     # 根日志级别
     root: INFO
 

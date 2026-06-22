@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>cn.iocoder.boot</groupId>
+        <groupId>com.ems.boot</groupId>
         <artifactId>east</artifactId>
         <version>${revision}</version>
     </parent>
@@ -21,35 +21,35 @@
     <dependencies>
         <!-- Web 相关 -->
         <dependency>
-            <groupId>cn.iocoder.boot</groupId>
+            <groupId>com.ems.boot</groupId>
             <artifactId>east-spring-boot-starter-security</artifactId>
         </dependency>
 
         <!-- DB 相关 -->
         <dependency>
-            <groupId>cn.iocoder.boot</groupId>
+            <groupId>com.ems.boot</groupId>
             <artifactId>east-spring-boot-starter-mybatis</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>cn.iocoder.boot</groupId>
+            <groupId>com.ems.boot</groupId>
             <artifactId>east-spring-boot-starter-redis</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.iocoder.boot</groupId>
+            <groupId>com.ems.boot</groupId>
             <artifactId>east-spring-boot-starter-job</artifactId>
         </dependency>
 
         <!-- Test 测试相关 -->
         <dependency>
-            <groupId>cn.iocoder.boot</groupId>
+            <groupId>com.ems.boot</groupId>
             <artifactId>east-spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
         <!-- 工具类相关 -->
         <dependency>
-            <groupId>cn.iocoder.boot</groupId>
+            <groupId>com.ems.boot</groupId>
             <artifactId>east-spring-boot-starter-excel</artifactId>
         </dependency>
 

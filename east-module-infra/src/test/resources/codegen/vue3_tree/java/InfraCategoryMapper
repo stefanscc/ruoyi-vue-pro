@@ -1,13 +1,13 @@
-package cn.iocoder.east.module.infra.dal.mysql.demo;
+package com.ems.east.module.infra.dal.mysql.demo;
 
 import java.util.*;
 
-import cn.iocoder.east.framework.common.pojo.PageResult;
-import cn.iocoder.east.framework.mybatis.core.query.LambdaQueryWrapperX;
-import cn.iocoder.east.framework.mybatis.core.mapper.BaseMapperX;
-import cn.iocoder.east.module.infra.dal.dataobject.demo.InfraCategoryDO;
+import com.ems.east.framework.common.pojo.PageResult;
+import com.ems.east.framework.mybatis.core.query.LambdaQueryWrapperX;
+import com.ems.east.framework.mybatis.core.mapper.BaseMapperX;
+import com.ems.east.module.infra.dal.dataobject.demo.InfraCategoryDO;
 import org.apache.ibatis.annotations.Mapper;
-import cn.iocoder.east.module.infra.controller.admin.demo.vo.*;
+import com.ems.east.module.infra.controller.admin.demo.vo.*;
 
 /**
  * 分类 Mapper

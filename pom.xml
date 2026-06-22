@@ -17,7 +17,7 @@
 
     <name>ems2.0</name>
     <description>ems2.0</description>
-    <groupId>cn.iocoder.boot</groupId>
+    <groupId>com.ems.boot</groupId>
     <artifactId>east</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
@@ -41,7 +41,7 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>cn.iocoder.boot</groupId>
+                <groupId>com.ems.boot</groupId>
                 <artifactId>east-dependencies</artifactId>
                 <version>${revision}</version>
                 <type>pom</type>

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.iocoder.boot</groupId>
+    <groupId>com.ems.boot</groupId>
     <artifactId>east-dependencies</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
@@ -112,7 +112,7 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <groupId>cn.iocoder.boot</groupId>
+                <groupId>com.ems.boot</groupId>
                 <artifactId>east-spring-boot-starter-biz-data-permission</artifactId>
                 <version>${revision}</version>
             </dependency>
@@ -127,13 +127,13 @@
 
             <!-- Web 相关 -->
             <dependency>
-                <groupId>cn.iocoder.boot</groupId>
+                <groupId>com.ems.boot</groupId>
                 <artifactId>east-spring-boot-starter-web</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <dependency>
-                <groupId>cn.iocoder.boot</groupId>
+                <groupId>com.ems.boot</groupId>
                 <artifactId>east-spring-boot-starter-security</artifactId>
                 <version>${revision}</version>
             </dependency>
@@ -157,7 +157,7 @@
 
             <!-- DB 相关 -->
             <dependency>
-                <groupId>cn.iocoder.boot</groupId>
+                <groupId>com.ems.boot</groupId>
                 <artifactId>east-spring-boot-starter-mybatis</artifactId>
                 <version>${revision}</version>
             </dependency>
@@ -226,7 +226,7 @@
             </dependency>
 
             <dependency>
-                <groupId>cn.iocoder.boot</groupId>
+                <groupId>com.ems.boot</groupId>
                 <artifactId>east-spring-boot-starter-redis</artifactId>
                 <version>${revision}</version>
             </dependency>
@@ -274,7 +274,7 @@
 
             <!-- Job 定时任务相关 -->
             <dependency>
-                <groupId>cn.iocoder.boot</groupId>
+                <groupId>com.ems.boot</groupId>
                 <artifactId>east-spring-boot-starter-job</artifactId>
                 <version>${revision}</version>
             </dependency>
@@ -339,7 +339,7 @@
 
             <!-- Test 测试相关 -->
             <dependency>
-                <groupId>cn.iocoder.boot</groupId>
+                <groupId>com.ems.boot</groupId>
                 <artifactId>east-spring-boot-starter-test</artifactId>
                 <version>${revision}</version>
                 <scope>test</scope>
@@ -394,13 +394,13 @@
 
             <!-- 工具类相关 -->
             <dependency>
-                <groupId>cn.iocoder.boot</groupId>
+                <groupId>com.ems.boot</groupId>
                 <artifactId>east-common</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <dependency>
-                <groupId>cn.iocoder.boot</groupId>
+                <groupId>com.ems.boot</groupId>
                 <artifactId>east-spring-boot-starter-excel</artifactId>
                 <version>${revision}</version>
             </dependency>
