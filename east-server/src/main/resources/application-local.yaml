@@ -1,0 +1,89 @@
+server:
+  port: 48080
+
+spring:
+  datasource:
+    druid:
+      web-stat-filter:
+        enabled: true
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+      filter:
+        stat:
+          enabled: true
+          log-slow-sql: true
+          slow-sql-millis: 100
+          merge-sql: true
+    dynamic:
+      primary: master
+      datasource:
+        master:
+          url: jdbc:postgresql://127.0.0.1:5432/ruoyi_vue_pro
+          username: iot
+          password: iot123456
+          driver-class-name: org.postgresql.Driver
+        tdengine:
+          url: jdbc:TAOS-RS://127.0.0.1:6041/iot
+          username: root
+          password: taosdata
+          driver-class-name: com.taosdata.jdbc.rs.RestfulDriver
+      druid:
+        initial-size: 1
+        min-idle: 1
+        max-active: 20
+        max-wait: 60000
+        validation-query: SELECT 1
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        pool-prepared-statements: true
+        max-pool-prepared-statement-per-connection-size: 20
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 0
+      repositories:
+        enabled: false
+  quartz:
+    auto-startup: true
+    scheduler-name: eastScheduler
+    job-store-type: jdbc
+    wait-for-jobs-to-complete-on-shutdown: true
+    jdbc:
+      initialize-schema: NEVER
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceName: eastScheduler
+            instanceId: AUTO
+          jobStore:
+            class: org.springframework.scheduling.quartz.LocalDataSourceJobStore
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+            isClustered: false
+            misfireThreshold: 60000
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 10
+            threadPriority: 5
+logging:
+  file:
+    name: ${user.home}/logs/${spring.application.name}.log
+  level:
+    cn.iocoder.east.module.infra.dal.mysql: debug
+    cn.iocoder.east.module.infra.dal.mysql.logger.ApiErrorLogMapper: INFO
+    cn.iocoder.east.module.infra.dal.mysql.job.JobLogMapper: INFO
+    cn.iocoder.east.module.system.dal.mysql: debug
+    org.springframework.context.support.PostProcessorRegistrationDelegate: ERROR
+
+east:
+  captcha:
+    enable: false
+  iot:
+    message-bus:
+      type: redis
+  security:
+    mock-enable: true
+    timeout: 24h

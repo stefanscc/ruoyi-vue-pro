@@ -1,0 +1,2 @@
+cn.iocoder.east.framework.quartz.config.EastQuartzAutoConfiguration
+cn.iocoder.east.framework.quartz.config.EastAsyncAutoConfiguration

@@ -1,0 +1,3 @@
+cn.iocoder.east.framework.datasource.config.EastDataSourceAutoConfiguration
+cn.iocoder.east.framework.mybatis.config.EastMybatisAutoConfiguration
+cn.iocoder.east.framework.translate.config.EastTranslateAutoConfiguration

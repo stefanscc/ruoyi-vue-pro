@@ -1,0 +1,41 @@
+spring:
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 0
+
+east:
+  iot:
+    gateway:
+      protocols:
+        - id: mqtt-json
+          enabled: false
+          protocol: mqtt
+          port: 1883
+          serialize: json
+          mqtt:
+            max-message-size: 8192
+            connect-timeout-seconds: 60
+        - id: emqx-1
+          enabled: true
+          protocol: emqx
+          port: 8090
+          emqx:
+            mqtt-host: 127.0.0.1
+            mqtt-port: 1883
+            mqtt-username: admin
+            mqtt-password: public
+            mqtt-client-id: iot-gateway-mqtt
+            mqtt-ssl: false
+            mqtt-topics:
+              - "/sys/#"
+            mqtt-qos: 1
+            clean-session: true
+            keep-alive-interval-seconds: 60
+            max-inflight-queue: 10000
+            connect-timeout-seconds: 10
+            reconnect-delay-ms: 5000
+            trust-all: true
+            http:
+              ssl-enabled: false

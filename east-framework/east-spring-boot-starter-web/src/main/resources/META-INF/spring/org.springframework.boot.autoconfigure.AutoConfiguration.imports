@@ -1,0 +1,7 @@
+cn.iocoder.east.framework.apilog.config.EastApiLogAutoConfiguration
+cn.iocoder.east.framework.jackson.config.EastJacksonAutoConfiguration
+cn.iocoder.east.framework.swagger.config.EastSwaggerAutoConfiguration
+cn.iocoder.east.framework.web.config.EastWebAutoConfiguration
+cn.iocoder.east.framework.xss.config.EastXssAutoConfiguration
+cn.iocoder.east.framework.banner.config.EastBannerAutoConfiguration
+cn.iocoder.east.framework.encrypt.config.EastApiEncryptAutoConfiguration

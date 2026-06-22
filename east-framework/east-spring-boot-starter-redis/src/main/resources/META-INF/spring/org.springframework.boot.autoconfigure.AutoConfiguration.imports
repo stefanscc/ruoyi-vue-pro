@@ -1,0 +1,2 @@
+cn.iocoder.east.framework.redis.config.EastRedisAutoConfiguration
+cn.iocoder.east.framework.redis.config.EastCacheAutoConfiguration
