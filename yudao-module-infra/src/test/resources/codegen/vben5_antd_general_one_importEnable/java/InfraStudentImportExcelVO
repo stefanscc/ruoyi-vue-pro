@@ -1,12 +1,12 @@
-package cn.iocoder.yudao.module.infra.controller.admin.demo.vo;
+package com.ems.yudao.module.infra.controller.admin.demo.vo;
 
 import cn.idev.excel.annotation.ExcelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import cn.iocoder.yudao.framework.excel.core.annotations.DictFormat;
-import cn.iocoder.yudao.framework.excel.core.convert.DictConvert;
+import com.ems.yudao.framework.excel.core.annotations.DictFormat;
+import com.ems.yudao.framework.excel.core.convert.DictConvert;
 
 /**
  * 学生 Excel 导入 VO

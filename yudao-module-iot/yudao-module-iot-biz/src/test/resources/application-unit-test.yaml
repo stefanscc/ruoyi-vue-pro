@@ -23,10 +23,10 @@ mybatis-plus:
 # 日志配置
 logging:
   level:
-    cn.iocoder.yudao.module.iot.service.rule.scene.matcher: DEBUG
-    cn.iocoder.yudao.module.iot.service.rule.scene.matcher.IotSceneRuleMatcherManager: INFO
-    cn.iocoder.yudao.module.iot.service.rule.scene.matcher.condition: DEBUG
-    cn.iocoder.yudao.module.iot.service.rule.scene.matcher.trigger: DEBUG
+    com.ems.yudao.module.iot.service.rule.scene.matcher: DEBUG
+    com.ems.yudao.module.iot.service.rule.scene.matcher.IotSceneRuleMatcherManager: INFO
+    com.ems.yudao.module.iot.service.rule.scene.matcher.condition: DEBUG
+    com.ems.yudao.module.iot.service.rule.scene.matcher.trigger: DEBUG
     root: WARN
 
 --- #################### 定时任务相关配置 ####################
@@ -44,7 +44,7 @@ logging:
 # 芋道配置项，设置当前项目所有自定义的配置
 yudao:
   info:
-    base-package: cn.iocoder.yudao
+    base-package: com.ems.yudao
   tenant: # 多租户相关配置项
     enable: true
   xss:

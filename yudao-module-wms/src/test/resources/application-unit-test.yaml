@@ -32,4 +32,4 @@ mybatis:
 
 yudao:
   info:
-    base-package: cn.iocoder.yudao.module
+    base-package: com.ems.yudao.module

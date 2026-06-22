@@ -1,1 +1,1 @@
-cn.iocoder.yudao.module.iot.core.messagebus.config.IotMessageBusAutoConfiguration
+com.ems.yudao.module.iot.core.messagebus.config.IotMessageBusAutoConfiguration

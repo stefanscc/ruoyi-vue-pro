@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.iocoder.yudao.module.erp.dal.mysql.statistics.ErpSaleStatisticsMapper">
+<mapper namespace="com.ems.yudao.module.erp.dal.mysql.statistics.ErpSaleStatisticsMapper">
 
     <select id="getSalePrice" resultType="java.math.BigDecimal">
         SELECT
@@ -10,8 +10,8 @@
                <if test="endTime != null">
                    AND out_time &lt; #{endTime}
                </if>
-               <if test="@cn.iocoder.yudao.framework.tenant.core.context.TenantContextHolder@getTenantId() != null">
-                   AND tenant_id = ${@cn.iocoder.yudao.framework.tenant.core.context.TenantContextHolder@getTenantId()}
+               <if test="@com.ems.yudao.framework.tenant.core.context.TenantContextHolder@getTenantId() != null">
+                   AND tenant_id = ${@com.ems.yudao.framework.tenant.core.context.TenantContextHolder@getTenantId()}
                </if>
                AND deleted = 0) -
             (SELECT IFNULL(SUM(total_price), 0)
@@ -20,8 +20,8 @@
                 <if test="endTime != null">
                     AND return_time &lt; #{endTime}
                 </if>
-                <if test="@cn.iocoder.yudao.framework.tenant.core.context.TenantContextHolder@getTenantId() != null">
-                    AND tenant_id = ${@cn.iocoder.yudao.framework.tenant.core.context.TenantContextHolder@getTenantId()}
+                <if test="@com.ems.yudao.framework.tenant.core.context.TenantContextHolder@getTenantId() != null">
+                    AND tenant_id = ${@com.ems.yudao.framework.tenant.core.context.TenantContextHolder@getTenantId()}
                 </if>
                 AND deleted = 0)
     </select>
