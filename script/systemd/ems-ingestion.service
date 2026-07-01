@@ -1,0 +1,18 @@
+[Unit]
+Description=EMS Go Ingestion
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ems
+Group=ems
+WorkingDirectory=/opt/east/go-services/ems-ingestion
+EnvironmentFile=/etc/east/ems-ingestion.env
+ExecStart=/opt/east/go-services/ems-ingestion/ems-ingestion
+Restart=always
+RestartSec=5
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target

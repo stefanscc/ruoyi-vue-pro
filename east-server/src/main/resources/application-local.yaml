@@ -84,6 +84,11 @@ east:
   iot:
     message-bus:
       type: redis
+    go-ingestion:
+      enabled: true
+      base-url: http://127.0.0.1:8090
+      internal-token: change-me
+      timeout: 10s
   security:
     mock-enable: true
     timeout: 24h

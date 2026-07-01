@@ -9,7 +9,6 @@
     <modules>
         <module>east-module-iot-biz</module>
         <module>east-module-iot-core</module>
-        <module>east-module-iot-gateway</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
 

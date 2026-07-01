@@ -2821,5 +2821,32 @@ INSERT INTO public.system_menu (id, name, permission, type, sort, parent_id, pat
 INSERT INTO public.system_menu (id, name, permission, type, sort, parent_id, path, icon, component, component_name, status, visible, keep_alive, always_show, creator, create_time, updater, update_time, deleted) VALUES (5989, '文件上传', 'infra:file:create', 3, 2, 5987, '', '', '', NULL, 0, true, true, true, '1', '2026-05-31 00:00:00', '1', '2026-05-31 00:00:00', 0);
 INSERT INTO public.system_menu (id, name, permission, type, sort, parent_id, path, icon, component, component_name, status, visible, keep_alive, always_show, creator, create_time, updater, update_time, deleted) VALUES (5990, '文件删除', 'infra:file:delete', 3, 3, 5987, '', '', '', NULL, 0, true, true, true, '1', '2026-05-31 00:00:00', '1', '2026-05-31 00:00:00', 0);
 
+--
+-- Data for Name: system_role; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO public.system_role (id, name, code, sort, data_scope, data_scope_dept_ids, status, type, remark, creator, create_time, updater, update_time, deleted) VALUES (1, '超级管理员', 'super_admin', 1, 1, '', 0, 1, '系统默认超级管理员', 'admin', '2021-01-05 17:03:48', 'admin', '2021-01-05 17:03:48', 0);
+
+--
+-- Data for Name: system_users; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO public.system_users (id, username, password, nickname, remark, dept_id, post_ids, email, mobile, sex, avatar, status, login_ip, login_date, creator, create_time, updater, update_time, deleted) VALUES (1, 'admin', '$2a$10$IqPUCU81.bBtiR3Ib9m.yOZ1h3IF7uQQE1j1xYyK3bfHMaq.YUu.u', '管理员', '系统默认管理员账号', 100, NULL, 'admin@admin.com', '13800138000', 1, '', 0, '127.0.0.1', NULL, 'admin', '2021-01-05 17:03:48', 'admin', '2021-01-05 17:03:48', 0);
+
+--
+-- Data for Name: system_role_menu; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO public.system_role_menu (id, role_id, menu_id, creator, create_time, updater, update_time, deleted)
+SELECT id, 1, id, 'admin', '2021-01-05 17:03:48', 'admin', '2021-01-05 17:03:48', 0
+FROM public.system_menu
+ORDER BY id;
+
+--
+-- Data for Name: system_user_role; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+INSERT INTO public.system_user_role (id, user_id, role_id, creator, create_time, updater, update_time, deleted) VALUES (1, 1, 1, 'admin', '2021-01-05 17:03:48', 'admin', '2021-01-05 17:03:48', 0);
+
 
 
