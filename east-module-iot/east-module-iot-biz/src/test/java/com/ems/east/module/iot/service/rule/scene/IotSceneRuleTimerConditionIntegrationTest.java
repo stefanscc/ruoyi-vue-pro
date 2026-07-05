@@ -73,7 +73,6 @@ public class IotSceneRuleTimerConditionIntegrationTest extends BaseMockitoUnitTe
 
     // 测试常量
     private static final Long SCENE_RULE_ID = 1L;
-    private static final Long TENANT_ID = 1L;
     private static final Long DEVICE_ID = 100L;
     private static final String PROPERTY_IDENTIFIER = "temperature";
 

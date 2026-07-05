@@ -123,11 +123,6 @@ public class MenuServiceImpl implements MenuService {
     }
 
     @Override
-    public List<MenuDO> getMenuListByTenant(MenuListReqVO reqVO) {
-        return getMenuList(reqVO);
-    }
-
-    @Override
     public List<MenuDO> filterDisableMenus(List<MenuDO> menuList) {
         if (CollUtil.isEmpty(menuList)){
             return Collections.emptyList();

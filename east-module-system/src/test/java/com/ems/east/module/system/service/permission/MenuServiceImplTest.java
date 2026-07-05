@@ -71,13 +71,13 @@ class MenuServiceImplTest extends BaseDbUnitTest {
     }
 
     @Test
-    void testGetMenuListByTenant_nowDelegatesToQuery() {
+    void testGetMenuList_filtersByStatus() {
         MenuDO enabled = randomPojo(MenuDO.class, o -> o.setStatus(CommonStatusEnum.ENABLE.getStatus()).setName("A"));
         menuMapper.insert(enabled);
         menuMapper.insert(cloneIgnoreId(enabled, o -> o.setStatus(CommonStatusEnum.DISABLE.getStatus())));
 
         MenuListReqVO reqVO = new MenuListReqVO().setStatus(CommonStatusEnum.ENABLE.getStatus());
-        List<MenuDO> result = menuService.getMenuListByTenant(reqVO);
+        List<MenuDO> result = menuService.getMenuList(reqVO);
         assertEquals(1, result.size());
         assertPojoEquals(enabled, result.get(0));
     }

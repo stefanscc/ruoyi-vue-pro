@@ -36,7 +36,7 @@ public interface RedisKeyConstants {
     String DEVICE_SERVER_ID = "iot:device_server_id";
 
     /**
-     * 设备信息的数据缓存，使用 Spring Cache 操作（忽略租户）
+     * 设备信息的数据缓存，使用 Spring Cache 操作
      *
      * KEY 格式 1：device_${deviceId}
      * KEY 格式 2：device_${productKey}_${deviceName}
@@ -45,7 +45,7 @@ public interface RedisKeyConstants {
     String DEVICE = "iot:device";
 
     /**
-     * 产品信息的数据缓存，使用 Spring Cache 操作（忽略租户）
+     * 产品信息的数据缓存，使用 Spring Cache 操作
      *
      * KEY 格式：product_${productId}
      * VALUE 数据类型：String(JSON)
@@ -53,7 +53,7 @@ public interface RedisKeyConstants {
     String PRODUCT = "iot:product";
 
     /**
-     * 物模型的数据缓存，使用 Spring Cache 操作（忽略租户）
+     * 物模型的数据缓存，使用 Spring Cache 操作
      *
      * KEY 格式：thing_model_${productId}
      * VALUE 数据类型：String 数组(JSON)，即 {@link com.ems.east.module.iot.dal.dataobject.thingmodel.IotThingModelDO} 列表

@@ -9,7 +9,6 @@ import lombok.AllArgsConstructor;
 import java.util.Arrays;
 
 import static com.ems.east.framework.security.core.util.SecurityFrameworkUtils.getLoginUserId;
-import static com.ems.east.framework.security.core.util.SecurityFrameworkUtils.skipPermissionCheck;
 
 /**
  * 默认的 {@link SecurityFrameworkService} 实现类
@@ -28,11 +27,6 @@ public class SecurityFrameworkServiceImpl implements SecurityFrameworkService {
 
     @Override
     public boolean hasAnyPermissions(String... permissions) {
-        // 特殊：跨租户访问
-        if (skipPermissionCheck()) {
-            return true;
-        }
-
         // 权限校验
         Long userId = getLoginUserId();
         if (userId == null) {
@@ -48,11 +42,6 @@ public class SecurityFrameworkServiceImpl implements SecurityFrameworkService {
 
     @Override
     public boolean hasAnyRoles(String... roles) {
-        // 特殊：跨租户访问
-        if (skipPermissionCheck()) {
-            return true;
-        }
-
         // 权限校验
         Long userId = getLoginUserId();
         if (userId == null) {
@@ -68,11 +57,6 @@ public class SecurityFrameworkServiceImpl implements SecurityFrameworkService {
 
     @Override
     public boolean hasAnyScopes(String... scope) {
-        // 特殊：跨租户访问
-        if (skipPermissionCheck()) {
-            return true;
-        }
-
         // 权限校验
         LoginUser user = SecurityFrameworkUtils.getLoginUser();
         if (user == null) {

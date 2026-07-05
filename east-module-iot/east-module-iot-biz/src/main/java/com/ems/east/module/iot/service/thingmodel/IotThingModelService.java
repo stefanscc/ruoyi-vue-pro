@@ -77,8 +77,6 @@ public interface IotThingModelService {
     /**
      * 【缓存】获得产品物模型列表
      *
-     * 注意：该方法会忽略租户信息，所以调用时，需要确认会不会有跨租户访问的风险！！！
-     *
      * @param productId 产品编号
      * @return 产品物模型列表
      */
