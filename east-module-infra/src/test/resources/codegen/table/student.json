@@ -9,7 +9,7 @@
     "businessName" : "demo",
     "className" : "InfraStudent",
     "classComment" : "学生",
-    "author" : "芋道源码"
+    "author" : "Hand of God"
   },
   "columns": [ {
     "id" : 100,
@@ -28,7 +28,7 @@
     "columnComment" : "名字",
     "javaType" : "String",
     "javaField" : "name",
-    "example" : "芋头",
+    "example" : "曹操",
     "createOperation" : true,
     "updateOperation" : true,
     "listOperation" : true,

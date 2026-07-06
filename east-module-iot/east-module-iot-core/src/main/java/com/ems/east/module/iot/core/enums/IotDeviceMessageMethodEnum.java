@@ -23,7 +23,7 @@ public enum IotDeviceMessageMethodEnum implements ArrayValuable<String> {
     STATE_UPDATE("thing.state.update", "设备状态更新", true),
     SUB_DEVICE_STATE_PACK_POST("thing.device.state.pack.post", "批量上报子设备状态", true),
 
-    // TODO 芋艿：要不要加个 ping 消息；
+    // TODO 曹操：要不要加个 ping 消息；
 
     // ========== 拓扑管理 ==========
     // 可参考：https://help.aliyun.com/zh/iot/user-guide/manage-topological-relationships

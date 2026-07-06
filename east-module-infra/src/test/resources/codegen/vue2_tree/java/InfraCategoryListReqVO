@@ -9,7 +9,7 @@ import com.ems.east.framework.common.pojo.PageParam;
 @Data
 public class InfraCategoryListReqVO {
 
-    @Schema(description = "名字", example = "芋头")
+    @Schema(description = "名字", example = "曹操")
     private String name;
 
 }

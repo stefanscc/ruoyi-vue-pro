@@ -13,7 +13,7 @@ import static com.ems.east.framework.common.util.date.DateUtils.FORMAT_YEAR_MONT
 @Data
 public class InfraStudentPageReqVO extends PageParam {
 
-    @Schema(description = "名字", example = "芋头")
+    @Schema(description = "名字", example = "曹操")
     private String name;
 
     @Schema(description = "出生日期")
