@@ -19,7 +19,7 @@ spring:
       primary: master
       datasource:
         master:
-          url: jdbc:postgresql://127.0.0.1:5432/ruoyi_vue_pro
+          url: jdbc:postgresql://127.0.0.1:5432/ems
           username: iot
           password: iot123456
           driver-class-name: org.postgresql.Driver

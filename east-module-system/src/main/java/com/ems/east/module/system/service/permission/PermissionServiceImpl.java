@@ -39,7 +39,7 @@ import static com.ems.east.framework.common.util.json.JsonUtils.toJsonString;
 /**
  * 权限 Service 实现类
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Service
 @Slf4j

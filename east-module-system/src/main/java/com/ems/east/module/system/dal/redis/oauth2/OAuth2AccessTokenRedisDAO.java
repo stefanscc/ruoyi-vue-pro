@@ -19,7 +19,7 @@ import static com.ems.east.module.system.dal.redis.RedisKeyConstants.OAUTH2_ACCE
 /**
  * {@link OAuth2AccessTokenDO} 的 RedisDAO
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Repository
 public class OAuth2AccessTokenRedisDAO {

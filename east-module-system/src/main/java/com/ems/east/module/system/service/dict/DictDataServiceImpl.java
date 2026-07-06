@@ -26,7 +26,7 @@ import static com.ems.east.module.system.enums.ErrorCodeConstants.*;
 /**
  * 字典数据 Service 实现类
  *
- * @author ruoyi
+ * @author Hand of God
  */
 @Service
 @Slf4j

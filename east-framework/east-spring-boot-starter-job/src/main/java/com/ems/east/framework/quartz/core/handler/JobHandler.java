@@ -3,7 +3,7 @@ package com.ems.east.framework.quartz.core.handler;
 /**
  * 任务处理器
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 public interface JobHandler {
 

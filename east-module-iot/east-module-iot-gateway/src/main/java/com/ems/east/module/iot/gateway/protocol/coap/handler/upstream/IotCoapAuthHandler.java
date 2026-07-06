@@ -20,7 +20,7 @@ import static com.ems.east.module.iot.gateway.enums.ErrorCodeConstants.DEVICE_AU
 /**
  * IoT 网关 CoAP 协议的【认证】处理器
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Slf4j
 public class IotCoapAuthHandler extends IotCoapAbstractHandler {

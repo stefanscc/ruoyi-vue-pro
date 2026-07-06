@@ -13,7 +13,7 @@ import static com.ems.east.framework.security.core.util.SecurityFrameworkUtils.g
 /**
  * 默认的 {@link SecurityFrameworkService} 实现类
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @AllArgsConstructor
 public class SecurityFrameworkServiceImpl implements SecurityFrameworkService {

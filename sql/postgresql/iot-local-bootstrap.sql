@@ -214,7 +214,7 @@ INSERT INTO public.iot_data_sink (
     id, name, description, status, type, config, creator, updater, deleted
 ) VALUES (
     4001, 'Local Event Sink', 'Write event messages into PostgreSQL', 0, 20,
-    '{"type":"20","jdbcUrl":"jdbc:postgresql://127.0.0.1:5432/ruoyi_vue_pro","username":"iot","password":"iot123456","tableName":"iot_test_event_log"}',
+    '{"type":"20","jdbcUrl":"jdbc:postgresql://127.0.0.1:5432/ems","username":"iot","password":"iot123456","tableName":"iot_test_event_log"}',
     'codex', 'codex', 0
 )
 ON CONFLICT (id) DO UPDATE SET

@@ -17,7 +17,7 @@ import static com.ems.east.framework.common.util.collection.CollectionUtils.conv
 /**
  * IoT 告警恢复的 {@link IotSceneRuleAction} 实现类
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Component
 public class IotAlertRecoverSceneRuleAction implements IotSceneRuleAction {

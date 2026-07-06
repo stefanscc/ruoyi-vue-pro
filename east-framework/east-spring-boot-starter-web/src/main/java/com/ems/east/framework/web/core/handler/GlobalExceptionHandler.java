@@ -50,7 +50,7 @@ import static com.ems.east.framework.common.exception.enums.GlobalErrorCodeConst
 /**
  * 全局异常处理器，将 Exception 翻译成 CommonResult + 对应的异常编号
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @RestControllerAdvice
 @AllArgsConstructor

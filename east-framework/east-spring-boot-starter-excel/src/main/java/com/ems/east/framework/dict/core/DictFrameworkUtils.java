@@ -18,7 +18,7 @@ import static com.ems.east.framework.common.util.collection.CollectionUtils.conv
 /**
  * 字典工具类
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Slf4j
 public class DictFrameworkUtils {

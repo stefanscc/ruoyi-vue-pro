@@ -7,7 +7,7 @@ import com.ems.east.module.iot.core.enums.IotProtocolTypeEnum;
  *
  * 定义传输层协议的生命周期管理
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 public interface IotProtocol {
 

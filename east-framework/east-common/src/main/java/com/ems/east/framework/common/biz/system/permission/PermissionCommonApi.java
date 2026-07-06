@@ -5,7 +5,7 @@ import com.ems.east.framework.common.biz.system.permission.dto.DeptDataPermissio
 /**
  * 权限 API 接口
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 public interface PermissionCommonApi {
 

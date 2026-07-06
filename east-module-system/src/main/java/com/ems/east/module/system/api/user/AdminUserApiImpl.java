@@ -23,7 +23,7 @@ import static com.ems.east.framework.common.util.collection.CollectionUtils.conv
 /**
  * Admin 用户 API 实现类
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Service
 public class AdminUserApiImpl implements AdminUserApi {
@@ -34,7 +34,7 @@ public class AdminUserApiImpl implements AdminUserApi {
     private DeptService deptService;
 
     @Override
-    @DataPermission(enable = false) // 忽略数据权限，避免因为过滤，导致无法查询用户。类似：https://github.com/YunaiV/ruoyi-vue-pro/issues/1051
+    @DataPermission(enable = false) // 忽略数据权限，避免因为过滤导致无法查询用户
     public AdminUserRespDTO getUser(Long id) {
         AdminUserDO user = userService.getUser(id);
         return BeanUtils.toBean(user, AdminUserRespDTO.class);

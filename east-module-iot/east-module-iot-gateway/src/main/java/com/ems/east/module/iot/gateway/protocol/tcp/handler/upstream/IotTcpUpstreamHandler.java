@@ -33,7 +33,7 @@ import static com.ems.east.module.iot.gateway.enums.ErrorCodeConstants.DEVICE_AU
 /**
  * TCP 上行消息处理器
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Slf4j
 public class IotTcpUpstreamHandler implements Handler<NetSocket> {

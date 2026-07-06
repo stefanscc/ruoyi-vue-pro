@@ -20,7 +20,7 @@ import java.util.UUID;
 /**
  * Redis 的 {@link IotMessageBus} 实现类
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Slf4j
 public class IotRedisMessageBus implements IotMessageBus {

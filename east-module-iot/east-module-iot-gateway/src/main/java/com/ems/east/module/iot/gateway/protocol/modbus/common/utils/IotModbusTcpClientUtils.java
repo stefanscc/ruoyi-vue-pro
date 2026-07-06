@@ -22,7 +22,7 @@ import static com.ems.east.module.iot.gateway.protocol.modbus.common.utils.IotMo
  * 2. 通过 {@link IotModbusTcpClientConnectionManager.ModbusConnection} 执行事务
  * 3. 从响应中提取原始值
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @UtilityClass
 @Slf4j

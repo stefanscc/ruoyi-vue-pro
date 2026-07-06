@@ -20,7 +20,7 @@ import static com.ems.east.module.infra.dal.dataobject.logger.ApiAccessLogDO.RES
 /**
  * API 访问日志 Service 实现类
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Slf4j
 @Service

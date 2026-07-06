@@ -5,7 +5,7 @@ package com.ems.east.module.iot.core.messagebus.core;
  *
  * 用于在 IoT 系统中发布和订阅消息，支持多种消息中间件实现
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 public interface IotMessageBus {
 

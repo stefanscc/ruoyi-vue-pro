@@ -5,7 +5,7 @@ import com.ems.east.module.iot.dal.dataobject.device.IotDevicePropertyDO;
 /**
  * IoT Redis Key 枚举类
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 public interface RedisKeyConstants {
 

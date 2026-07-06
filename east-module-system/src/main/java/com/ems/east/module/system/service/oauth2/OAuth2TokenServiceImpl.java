@@ -35,7 +35,7 @@ import static com.ems.east.framework.common.util.collection.CollectionUtils.conv
 /**
  * OAuth2.0 Token Service 实现类
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Service
 public class OAuth2TokenServiceImpl implements OAuth2TokenService {

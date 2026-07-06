@@ -18,7 +18,7 @@ import static com.ems.east.framework.common.util.collection.CollectionUtils.conv
 /**
  * 设备的最后上报时间的 Redis DAO
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Repository
 public class DeviceReportTimeRedisDAO {

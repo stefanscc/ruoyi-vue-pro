@@ -3,7 +3,7 @@ package com.ems.east.framework.datapermission.core.rule.dept;
 /**
  * {@link DeptDataPermissionRule} 的自定义配置接口
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @FunctionalInterface
 public interface DeptDataPermissionRuleCustomizer {

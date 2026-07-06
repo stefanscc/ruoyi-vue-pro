@@ -21,7 +21,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 /**
  * IoT 消息总线自动配置
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @AutoConfiguration
 @EnableConfigurationProperties(IotMessageBusProperties.class)

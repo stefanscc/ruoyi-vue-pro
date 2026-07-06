@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 /**
  * IoT 子设备状态批量消息拆包器
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Service
 @Slf4j

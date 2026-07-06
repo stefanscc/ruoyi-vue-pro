@@ -7,7 +7,7 @@ import com.ems.east.module.iot.gateway.protocol.tcp.IotTcpConfig;
 /**
  * IoT TCP 帧编解码器工厂
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 public class IotTcpFrameCodecFactory {
 

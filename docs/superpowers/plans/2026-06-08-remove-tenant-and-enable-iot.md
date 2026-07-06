@@ -438,14 +438,14 @@ Expected: gateway logs upstream publish handling and the main server logs messag
 Run:
 
 ```bash
-DEVICE_ID=$(psql -h 127.0.0.1 -U iot -d ruoyi_vue_pro -tAc "SELECT id FROM iot_device d JOIN iot_product p ON p.id = d.product_id WHERE p.product_key = '4aymZgOTOOCrDKRT' AND d.device_name = 'small' LIMIT 1;")
+DEVICE_ID=$(psql -h 127.0.0.1 -U iot -d ems -tAc "SELECT id FROM iot_device d JOIN iot_product p ON p.id = d.product_id WHERE p.product_key = '4aymZgOTOOCrDKRT' AND d.device_name = 'small' LIMIT 1;")
 taos -s "USE iot; SELECT ts,id,method,identifier FROM device_message_${DEVICE_ID} ORDER BY ts DESC LIMIT 10;"
 ```
 
 Run:
 
 ```bash
-psql -h 127.0.0.1 -U iot -d ruoyi_vue_pro -c "SELECT id, device_id, method, report_time FROM iot_test_event_log ORDER BY create_time DESC LIMIT 10;"
+psql -h 127.0.0.1 -U iot -d ems -c "SELECT id, device_id, method, report_time FROM iot_test_event_log ORDER BY create_time DESC LIMIT 10;"
 ```
 
 Expected: one property history row and one event persistence row visible with no `tenant_id` column involved.

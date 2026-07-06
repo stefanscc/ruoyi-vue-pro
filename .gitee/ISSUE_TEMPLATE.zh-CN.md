@@ -1,10 +1,10 @@
-碰到问题，请在 <https://gitee.com/zhijiantianya/ruoyi-vue-pro/issues> 搜索是否存在相似的 issue。
+提交前请先搜索当前仓库里是否已有相似 issue。
 
 不按照模板提交的 issue，会被系统自动删除。
 
 ### 基本信息
 
-- ruoyi-vue-pro 版本：
+- 项目版本：
 - 操作系统：
 - 数据库：
 

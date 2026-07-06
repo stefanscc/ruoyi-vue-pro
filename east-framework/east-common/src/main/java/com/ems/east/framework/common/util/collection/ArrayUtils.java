@@ -13,7 +13,7 @@ import static com.ems.east.framework.common.util.collection.CollectionUtils.conv
 /**
  * Array 工具类
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 public class ArrayUtils {
 

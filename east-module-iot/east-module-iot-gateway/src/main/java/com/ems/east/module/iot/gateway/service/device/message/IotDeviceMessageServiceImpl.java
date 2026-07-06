@@ -22,7 +22,7 @@ import static com.ems.east.module.iot.gateway.enums.ErrorCodeConstants.DEVICE_NO
 /**
  * IoT 设备消息 Service 实现类
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Service
 @Slf4j

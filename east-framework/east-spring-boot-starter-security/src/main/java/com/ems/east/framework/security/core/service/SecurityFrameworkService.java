@@ -3,7 +3,7 @@ package com.ems.east.framework.security.core.service;
 /**
  * Security 框架 Service 接口，定义权限相关的校验操作
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 public interface SecurityFrameworkService {
 

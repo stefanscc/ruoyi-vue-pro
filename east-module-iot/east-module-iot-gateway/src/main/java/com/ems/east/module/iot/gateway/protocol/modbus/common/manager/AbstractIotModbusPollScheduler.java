@@ -21,7 +21,7 @@ import static com.ems.east.framework.common.util.collection.CollectionUtils.conv
  * 子类只需实现 {@link #pollPoint(Long, Long)} 定义具体的轮询动作。
  * <p>
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Slf4j
 public abstract class AbstractIotModbusPollScheduler {

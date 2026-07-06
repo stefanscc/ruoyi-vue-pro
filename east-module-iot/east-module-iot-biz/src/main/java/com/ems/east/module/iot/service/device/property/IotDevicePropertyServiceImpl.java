@@ -42,7 +42,7 @@ import static com.ems.east.framework.common.util.collection.MapUtils.getBigDecim
 /**
  * IoT 设备【属性】数据 Service 实现类
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Service
 @Slf4j

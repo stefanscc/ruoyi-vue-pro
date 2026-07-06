@@ -11,7 +11,7 @@ import java.util.List;
  * <p>
  * 用于 {@link IotDeviceMessageMethodEnum#SUB_DEVICE_STATE_PACK_POST} 消息的 params 参数
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Data
 public class IotSubDeviceStatePackPostReqDTO {

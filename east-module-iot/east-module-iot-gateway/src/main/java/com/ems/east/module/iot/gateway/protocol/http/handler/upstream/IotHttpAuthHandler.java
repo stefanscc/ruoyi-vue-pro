@@ -23,7 +23,7 @@ import static com.ems.east.module.iot.gateway.enums.ErrorCodeConstants.DEVICE_AU
  *
  * 参考 <a href="阿里云 IoT —— HTTPS 连接通信">https://help.aliyun.com/zh/iot/user-guide/establish-connections-over-https</a>
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 public class IotHttpAuthHandler extends IotHttpAbstractHandler {
 

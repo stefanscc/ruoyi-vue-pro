@@ -5,7 +5,7 @@ import com.ems.east.module.iot.core.topic.IotDeviceIdentity;
 /**
  * IoT 设备 Token Service 接口
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 public interface IotDeviceTokenService {
 

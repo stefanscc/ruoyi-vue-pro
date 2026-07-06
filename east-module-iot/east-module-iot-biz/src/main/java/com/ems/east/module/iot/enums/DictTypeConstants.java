@@ -3,7 +3,7 @@ package com.ems.east.module.iot.enums;
 /**
  * IoT 字典类型的枚举类
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 public class DictTypeConstants {
 

@@ -6,7 +6,7 @@ import com.ems.east.module.iot.core.mq.message.IotDeviceMessage;
 /**
  * IoT 设备消息 Service 接口
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 public interface IotDeviceMessageService {
 

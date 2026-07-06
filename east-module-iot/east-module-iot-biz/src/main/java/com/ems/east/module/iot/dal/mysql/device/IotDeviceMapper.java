@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 /**
  * IoT 设备 Mapper
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Mapper
 public interface IotDeviceMapper extends BaseMapperX<IotDeviceDO> {

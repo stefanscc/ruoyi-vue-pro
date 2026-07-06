@@ -1,6 +1,6 @@
 # EMS Minimal Base
 
-This repository is a trimmed EMS backend base derived from `ruoyi-vue-pro-jdk17`.
+This repository is a trimmed EMS backend base for the current `east` backend stack.
 
 ## Retained backend modules
 

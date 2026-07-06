@@ -22,7 +22,7 @@ import java.util.Map;
 /**
  * IoT OTA 升级推送 Job：查询待推送的 OTA 升级记录，并推送给设备
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Component
 @Slf4j

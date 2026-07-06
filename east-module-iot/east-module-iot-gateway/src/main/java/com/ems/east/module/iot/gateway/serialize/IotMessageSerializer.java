@@ -8,7 +8,7 @@ import com.ems.east.module.iot.core.mq.message.IotDeviceMessage;
  *
  * 用于序列化和反序列化设备消息
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 public interface IotMessageSerializer {
 

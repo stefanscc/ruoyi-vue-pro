@@ -37,7 +37,7 @@ import static com.ems.east.module.iot.enums.ErrorCodeConstants.*;
 /**
  * IoT 产品物模型 Service 实现类
  *
- * @author 芋道源码
+ * @author Hand of God
  */
 @Service
 @Validated
