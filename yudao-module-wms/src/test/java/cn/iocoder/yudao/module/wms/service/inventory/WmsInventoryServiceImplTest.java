@@ -241,6 +241,46 @@ public class WmsInventoryServiceImplTest extends BaseDbUnitTest {
     }
 
     @Test
+    public void testChangeInventory_multipleExistingInventoryKeys() {
+        // mock 数据
+        WmsItemDO item = createItem("ITEM-001", "红富士苹果");
+        WmsItemSkuDO sku = createSku(item.getId(), "SKU-001", "10kg 箱装");
+        inventoryMapper.insert(createInventory(sku.getId(), 200L, "7.00"));
+        inventoryMapper.insert(createInventory(sku.getId(), 100L, "5.00"));
+        WmsInventoryChangeReqDTO reqDTO = createChangeReq(sku.getId(), 100L, "2.00");
+        List<WmsInventoryChangeReqDTO.Item> items = new ArrayList<>(reqDTO.getItems());
+        items.add(new WmsInventoryChangeReqDTO.Item()
+                .setSkuId(sku.getId())
+                .setWarehouseId(200L)
+                .setQuantity(new BigDecimal("3.00"))
+                .setPrice(new BigDecimal("100.00"))
+                .setTotalPrice(new BigDecimal("300.00"))
+                .setRemark("测试入库 2"));
+        reqDTO.setItems(items);
+
+        // 调用
+        inventoryService.changeInventory(reqDTO);
+
+        // 断言：多条已存在库存余额分别更新
+        WmsInventoryDO inventory1 = inventoryMapper.selectBySkuIdAndWarehouseId(sku.getId(), 100L);
+        assertNotNull(inventory1);
+        assertEquals(0, new BigDecimal("7.00").compareTo(inventory1.getQuantity()));
+        WmsInventoryDO inventory2 = inventoryMapper.selectBySkuIdAndWarehouseId(sku.getId(), 200L);
+        assertNotNull(inventory2);
+        assertEquals(0, new BigDecimal("10.00").compareTo(inventory2.getQuantity()));
+        // 断言：库存流水保持入参明细顺序
+        List<WmsInventoryHistoryDO> histories = inventoryHistoryMapper.selectList();
+        histories.sort(Comparator.comparing(WmsInventoryHistoryDO::getId));
+        assertEquals(2, histories.size());
+        assertEquals(100L, histories.get(0).getWarehouseId());
+        assertEquals(0, new BigDecimal("5.00").compareTo(histories.get(0).getBeforeQuantity()));
+        assertEquals(0, new BigDecimal("7.00").compareTo(histories.get(0).getAfterQuantity()));
+        assertEquals(200L, histories.get(1).getWarehouseId());
+        assertEquals(0, new BigDecimal("7.00").compareTo(histories.get(1).getBeforeQuantity()));
+        assertEquals(0, new BigDecimal("10.00").compareTo(histories.get(1).getAfterQuantity()));
+    }
+
+    @Test
     public void testChangeInventory_concurrentCreateSameInventoryOnlyOneBalance() throws Exception {
         // mock 数据
         WmsItemDO item = createItem("ITEM-001", "红富士苹果");
@@ -293,7 +333,7 @@ public class WmsInventoryServiceImplTest extends BaseDbUnitTest {
 
         // 调用，并断言
         assertServiceException(() -> inventoryService.changeInventory(reqDTO), INVENTORY_QUANTITY_NOT_ENOUGH,
-                item.getName(), sku.getName(), 100L, new BigDecimal("2.000000"), new BigDecimal("-3.00"));
+                item.getName(), sku.getName(), 100L, new BigDecimal("2.00"), new BigDecimal("-3.00"));
         WmsInventoryDO inventory = inventoryMapper.selectBySkuIdAndWarehouseId(sku.getId(), 100L);
         assertNotNull(inventory);
         assertEquals(0, new BigDecimal("2.00").compareTo(inventory.getQuantity()));
@@ -310,7 +350,7 @@ public class WmsInventoryServiceImplTest extends BaseDbUnitTest {
 
         // 调用，并断言
         assertServiceException(() -> inventoryService.changeInventory(reqDTO), INVENTORY_QUANTITY_NOT_ENOUGH,
-                item.getName(), sku.getName(), 100L, BigDecimal.ZERO.setScale(6), new BigDecimal("-3.00"));
+                item.getName(), sku.getName(), 100L, new BigDecimal("0.00"), new BigDecimal("-3.00"));
         assertEquals(0L, inventoryMapper.selectCount());
         assertEquals(0L, inventoryHistoryMapper.selectCount());
     }
@@ -334,7 +374,7 @@ public class WmsInventoryServiceImplTest extends BaseDbUnitTest {
 
         // 调用，并断言：第二条明细库存不足，事务回滚前面补齐的库存行
         assertServiceException(() -> inventoryService.changeInventory(reqDTO), INVENTORY_QUANTITY_NOT_ENOUGH,
-                item.getName(), sku.getName(), 200L, BigDecimal.ZERO.setScale(6), new BigDecimal("-1.00"));
+                item.getName(), sku.getName(), 200L, new BigDecimal("0.00"), new BigDecimal("-1.00"));
         assertNull(inventoryMapper.selectBySkuIdAndWarehouseId(sku.getId(), 100L));
         assertNull(inventoryMapper.selectBySkuIdAndWarehouseId(sku.getId(), 200L));
         assertEquals(0L, inventoryHistoryMapper.selectCount());
